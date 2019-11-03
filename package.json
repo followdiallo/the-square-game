@@ -1,0 +1,13 @@
+{
+  "name": "attempt2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Diallo <diallo.spears@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "go": "node server.js"
+  }
+}
