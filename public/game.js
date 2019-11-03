@@ -3,6 +3,11 @@ import InputHandler from "/input.js";
 import Traffic from "./traffic.js";
 import Traffic2 from "./traffic2.js";
 
+const GAMESTATE = {
+  RUNNING: 0,
+  VICTORY: 1
+};
+
 export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
@@ -10,6 +15,7 @@ export default class Game {
   }
 
   start() {
+    this.gamestate = GAMESTATE.RUNNING;
     this.player = new Player(this);
     new InputHandler(this.player);
 
@@ -38,10 +44,24 @@ export default class Game {
   }
 
   update(deltaTime) {
+    if (this.player.position.y === 0) {
+      this.gamestate = GAMESTATE.VICTORY;
+      return;
+    }
     this.gameObjects.forEach(object => object.update(deltaTime));
   }
 
   draw(ctx) {
+    if (this.gamestate === GAMESTATE.VICTORY) {
+      ctx.rect(0, 0, this.gameWidth, this.gameHeight);
+      ctx.fillStyle = "rgba(0,0,0,0.5)";
+      ctx.fill();
+      ctx.font = "80px Courier";
+      ctx.fillStyle = "white";
+      ctx.textAlign = "center";
+      ctx.fillText("YOU WIN", this.gameWidth / 2, 60);
+      return;
+    }
     this.gameObjects.forEach(object => object.draw(ctx));
   }
 }
