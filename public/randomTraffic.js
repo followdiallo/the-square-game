@@ -39,8 +39,10 @@ export default class RandomTraffic {
 
   draw(contx) {
     //contx.fillStyle = "#cc0000";
+    contx.globalAlpha = 0.85;
     contx.fillStyle = this.color;
     contx.fillRect(this.position.x, this.position.y, this.width, this.height);
+    contx.globalAlpha = 1;
   }
 
   update(deltaTime) {
@@ -91,7 +93,7 @@ export default class RandomTraffic {
           this.game.player.height += 2;
           this.game.player.position.x -= 1;
           this.game.player.position.y -= 1;
-          this.game.player.score++;
+          this.game.player.score += this.size;
           this.deleteMe = true;
         } else {
           this.game.player.deleteMe = true;
