@@ -8,6 +8,7 @@ export default class Player {
       x: this.gameWidth / 2 - this.width / 2,
       y: this.gameHeight / 2 - this.height / 2
     };
+    this.score = 0;
     this.deleteMe = false;
   }
 

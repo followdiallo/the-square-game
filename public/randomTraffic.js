@@ -89,6 +89,9 @@ export default class RandomTraffic {
         if (this.game.player.width > this.width) {
           this.game.player.width += 2;
           this.game.player.height += 2;
+          this.game.player.position.x -= 1;
+          this.game.player.position.y -= 1;
+          this.game.player.score++;
           this.deleteMe = true;
         } else {
           this.game.player.deleteMe = true;

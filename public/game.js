@@ -41,7 +41,14 @@ export default class Game {
 
   generateTraffic() {
     const directions = ["up", "down", "left", "right"];
-    const colors = ["#D0689B", "#B7219D", "#461BAB", "#5A1B8B", "#2D0D6D"];
+    const colors = [
+      "#D0689B",
+      "#B7219D",
+      "#461BAB",
+      "#5A1B8B",
+      "#2D0D6D",
+      "#E05B76"
+    ];
     //const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
     const newTraffic = new RandomTraffic(
       this,
@@ -79,5 +86,8 @@ export default class Game {
       return;
     }
     this.gameObjects.forEach(object => object.draw(ctx));
+    ctx.font = "25px Courier";
+    ctx.fillStyle = "orange";
+    ctx.fillText(this.player.score, 500, 20);
   }
 }
