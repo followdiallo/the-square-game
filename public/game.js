@@ -70,6 +70,12 @@ export default class Game {
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
       ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2);
+      ctx.font = "25px Courier";
+      ctx.fillText(
+        "Press Spacebar",
+        this.gameWidth / 2,
+        this.gameHeight / 2 + 35
+      );
       return;
     }
     this.gameObjects.forEach(object => object.draw(ctx));
