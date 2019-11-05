@@ -5,7 +5,8 @@ export default class RandomTraffic {
     this.game = game;
     this.origin = origin;
     this.color = color;
-    this.size = Math.floor(Math.random() * 100);
+    this.size = Math.floor(Math.random() * 100) + 5;
+    this.speed = Math.floor(Math.random() * 2);
     this.width = this.size;
     this.height = this.size;
     this.position = {
@@ -46,25 +47,25 @@ export default class RandomTraffic {
     if (!deltaTime) return;
     switch (this.origin) {
       case "left":
-        this.position.x += 10 / deltaTime;
+        this.position.x += 10 / deltaTime + this.speed;
         if (this.position.x > this.game.gameWidth) {
           this.deleteMe = true;
         }
         break;
       case "right":
-        this.position.x -= 10 / deltaTime;
+        this.position.x -= 10 / deltaTime + this.speed;
         if (this.position.x < 0 - this.width) {
           this.deleteMe = true;
         }
         break;
       case "up":
-        this.position.y += 10 / deltaTime;
+        this.position.y += 10 / deltaTime + this.speed;
         if (this.position.y > this.game.gameHeight) {
           this.deleteMe = true;
         }
         break;
       case "down":
-        this.position.y -= 10 / deltaTime;
+        this.position.y -= 10 / deltaTime + this.speed;
         if (this.position.y < 0 - this.height) {
           this.deleteMe = true;
         }

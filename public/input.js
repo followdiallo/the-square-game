@@ -1,22 +1,24 @@
-import Player from "/player.js";
-
 export default class InputHandler {
-  constructor(player) {
+  constructor(game) {
     document.addEventListener("keydown", event => {
       // 37, 38, 39, 40
       // left, up, right, down
+      // 32 = space
       switch (event.keyCode) {
         case 37:
-          player.moveLeft();
+          game.player.moveLeft();
           break;
         case 38:
-          player.moveUp();
+          game.player.moveUp();
           break;
         case 39:
-          player.moveRight();
+          game.player.moveRight();
           break;
         case 40:
-          player.moveDown();
+          game.player.moveDown();
+          break;
+        case 32:
+          game.restart();
           break;
       }
     });

@@ -17,28 +17,28 @@ export default class Player {
   }
 
   moveLeft() {
-    this.position.x -= 10;
+    this.position.x -= 13;
     if (this.position.x <= 0) {
       this.position.x = 0;
     }
   }
 
   moveUp() {
-    this.position.y -= 10;
+    this.position.y -= 13;
     if (this.position.y <= 0) {
       this.position.y = 0;
     }
   }
 
   moveRight() {
-    this.position.x += 10;
+    this.position.x += 13;
     if (this.position.x + this.width >= this.gameWidth) {
       this.position.x = this.gameWidth - this.width;
     }
   }
 
   moveDown() {
-    this.position.y += 10;
+    this.position.y += 13;
     if (this.position.y >= this.gameWidth - this.height) {
       this.position.y = this.gameWidth - this.height;
     }

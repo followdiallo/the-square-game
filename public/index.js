@@ -4,8 +4,8 @@ export default gameLoop;
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 
-const gameWidth = 500;
-const gameHeight = 500;
+const gameWidth = 550;
+const gameHeight = 550;
 
 let game = new Game(gameWidth, gameHeight);
 game.start();
