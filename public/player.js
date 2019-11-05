@@ -6,12 +6,13 @@ export default class Player {
     this.height = 40;
     this.position = {
       x: this.gameWidth / 2 - this.width / 2,
-      y: this.gameHeight - this.height
+      y: this.gameHeight / 2 - this.height / 2
     };
+    this.deleteMe = false;
   }
 
   draw(contx) {
-    contx.fillStyle = "#0ff";
+    contx.fillStyle = "white"; //"#0ff";
     contx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
@@ -45,9 +46,5 @@ export default class Player {
 
   update(deltaTime) {
     if (!deltaTime) return;
-    // this.position.y -= 10 / deltaTime;
-    // if (this.position.y <= 0) {
-    //   this.position.y = 0;
-    // }
   }
 }
