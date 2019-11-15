@@ -75,18 +75,23 @@ export default class RandomTraffic {
     }
     // COLLISIONS
     let trafficTop = this.position.y;
-    let trafficBottom = this.position.y + this.height;
+    let trafficBottom = trafficTop + this.height;
     let trafficLeft = this.position.x;
-    let trafficRight = this.position.x + this.width;
+    let trafficRight = trafficLeft + this.width;
+    let playerTop = this.game.player.position.y;
+    let playerBottom = playerTop + this.game.player.height;
+    let playerLeft = this.game.player.position.x;
+    let playerRight = playerLeft + this.game.player.width;
+
     if (
-      this.game.player.position.y <= trafficBottom &&
-      this.game.player.position.y + this.game.player.height >= trafficTop
+      (playerTop <= trafficBottom && playerTop >= trafficTop) ||
+      (playerBottom <= trafficBottom && playerBottom >= trafficTop)
     ) {
       if (
-        (this.game.player.position.x <= trafficRight &&
-          this.game.player.position.x >= trafficLeft) ||
-        (this.game.player.position.x + this.game.player.width <= trafficRight &&
-          this.game.player.position.x + this.game.player.width >= trafficLeft)
+        (playerLeft <= trafficRight && playerLeft >= trafficLeft) ||
+        (playerRight <= trafficRight && playerRight >= trafficLeft) ||
+        (trafficLeft >= playerLeft && trafficLeft <= playerRight) ||
+        (trafficRight >= playerLeft && trafficRight <= playerRight)
       ) {
         if (this.game.player.width > this.width) {
           this.game.player.width += 2;
