@@ -85,7 +85,9 @@ export default class RandomTraffic {
 
     if (
       (playerTop <= trafficBottom && playerTop >= trafficTop) ||
-      (playerBottom <= trafficBottom && playerBottom >= trafficTop)
+      (playerBottom <= trafficBottom && playerBottom >= trafficTop) ||
+      (trafficTop <= playerBottom && trafficTop >= playerTop) ||
+      (trafficBottom <= playerBottom && trafficBottom >= playerTop)
     ) {
       if (
         (playerLeft <= trafficRight && playerLeft >= trafficLeft) ||
@@ -98,7 +100,7 @@ export default class RandomTraffic {
           this.game.player.height += 2;
           this.game.player.position.x -= 1;
           this.game.player.position.y -= 1;
-          this.game.player.score += this.size;
+          this.game.player.score += Math.ceil(this.size / 5) * 5;
           this.deleteMe = true;
         } else {
           this.game.player.deleteMe = true;
