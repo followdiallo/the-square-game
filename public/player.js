@@ -13,7 +13,7 @@ export default class Player {
   }
 
   draw(contx) {
-    contx.fillStyle = "white"; //"#0ff";
+    contx.fillStyle = "white";
     contx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 

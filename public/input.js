@@ -1,9 +1,6 @@
 export default class InputHandler {
   constructor(game) {
     document.addEventListener("keydown", event => {
-      // 37, 38, 39, 40
-      // left, up, right, down
-      // 32 = space
       switch (event.keyCode) {
         case 37:
           game.player.moveLeft();

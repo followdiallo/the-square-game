@@ -38,7 +38,6 @@ export default class RandomTraffic {
   }
 
   draw(contx) {
-    //contx.fillStyle = "#cc0000";
     contx.globalAlpha = 0.85;
     contx.fillStyle = this.color;
     contx.fillRect(this.position.x, this.position.y, this.width, this.height);

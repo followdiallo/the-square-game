@@ -49,7 +49,6 @@ export default class Game {
       "#2D0D6D",
       "#E05B76"
     ];
-    //const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
     const newTraffic = new RandomTraffic(
       this,
       directions[Math.floor(Math.random() * 4)],
@@ -70,9 +69,6 @@ export default class Game {
 
   draw(ctx) {
     if (this.gamestate === GAMESTATE.GAME_OVER) {
-      //   ctx.rect(0, 0, this.gameWidth, this.gameHeight);
-      //   ctx.fillStyle = "rgba(0,0,0,0.5)";
-      //   ctx.fill();
       ctx.font = "80px Courier";
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
