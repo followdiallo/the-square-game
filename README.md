@@ -2,7 +2,9 @@
 
 This was made during my time as a student at Code Chrysalis.
 
-I created this project to teach myself how to make games in JavaScript
+I created this project to teach myself how to make games in JavaScript.
+
+(Here is a [tech talk](https://youtu.be/GPU-q2YyWyo?t=5766) where I talk about what I learned.)
 
 ## How to Play
 
